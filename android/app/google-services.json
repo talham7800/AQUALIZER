@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "439935360965",
+    "firebase_url": "https://aqua-analyser-default-rtdb.asia-southeast1.firebasedatabase.app",
+    "project_id": "aqua-analyser",
+    "storage_bucket": "aqua-analyser.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:439935360965:android:f6fe13f71f8dc5d39075ac",
+        "android_client_info": {
+          "package_name": "com.example.fyp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "439935360965-ad6cvak94tkhfiulsv4bvsqdvrga57jk.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.fyp",
+            "certificate_hash": "c2c9842c8b2db84cd5fc68f79bd132335899a5d9"
+          }
+        },
+        {
+          "client_id": "439935360965-144hp8kifupt5bbpnge0s991s219hk1m.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCG8hbEv4nGssX93JHJn9Z0LxdVYA3VL9U"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "439935360965-144hp8kifupt5bbpnge0s991s219hk1m.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
