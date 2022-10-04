@@ -1,7 +1,7 @@
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:fyp/Login.dart';
-import 'package:fyp/firebase_services.dart';
+import 'package:fyp/services/firebase_services.dart';
 import 'package:fyp/widget/widget.dart';
 
 class signup extends StatefulWidget {

@@ -1,8 +1,7 @@
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
-import 'package:fyp/dashboard.dart';
-import 'package:fyp/firebase_services.dart';
 import 'package:fyp/forgot_password.dart';
+import 'package:fyp/services/firebase_services.dart';
 import 'package:fyp/signup.dart';
 import 'package:fyp/widget/widget.dart';
 
@@ -14,8 +13,10 @@ class login extends StatefulWidget {
 }
 
 class _loginState extends State<login> {
-  TextEditingController _emailconroller = new TextEditingController();
-  TextEditingController _passconroller = new TextEditingController();
+  TextEditingController _emailconroller =
+      new TextEditingController(text: 'talham7800@gmail.com');
+  TextEditingController _passconroller =
+      new TextEditingController(text: '123456');
 
   bool _isObscure = true;
   @override

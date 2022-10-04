@@ -1,8 +1,7 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:fyp/Login.dart';
-
-import 'dashboard.dart';
+import 'package:fyp/home.dart';
 
 class AuthenticationService {
   final auth = FirebaseAuth.instance;
@@ -34,7 +33,7 @@ class AuthenticationService {
           .then((value) =>
               //null,
               Navigator.push(context,
-                  MaterialPageRoute(builder: (context) => dashboard())));
+                  MaterialPageRoute(builder: (context) => HomeScrren())));
     } on FirebaseException catch (e) {
       return e.message;
     }

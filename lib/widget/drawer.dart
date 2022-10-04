@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
-import 'package:fyp/Login.dart';
-import 'package:fyp/firebase_services.dart';
+import 'package:fyp/services/firebase_services.dart';
 
 class customDrawer extends StatelessWidget {
   customDrawer({
