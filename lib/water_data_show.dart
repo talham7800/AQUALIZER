@@ -21,9 +21,10 @@ class accountDetails extends StatelessWidget {
                   'Nothing to show here\nEmpty',
                   textAlign: TextAlign.center,
                 ));
+
           if (snapshot.hasData) {
             return Container(
-              child: Text(snapshot.data.toString()),
+              child: Text(snapshot.data!.data.toString()),
             );
           } else {
             return CircularProgressIndicator();
