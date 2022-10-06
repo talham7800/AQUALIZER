@@ -2,6 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:fyp/services/httpservice.dart';
 import 'package:fyp/widget/aquamodel.dart';
 import 'package:provider/provider.dart';
+import 'package:simple_circular_progress_bar/simple_circular_progress_bar.dart';
+
+import 'widget/global_progress_bar_widget.dart';
 
 class accountDetails extends StatelessWidget {
   const accountDetails({Key? key}) : super(key: key);
@@ -24,8 +27,9 @@ class accountDetails extends StatelessWidget {
 
           if (snapshot.hasData) {
             return Container(
-              child: Text(snapshot.data!.data.toString()),
-            );
+                child: ProgressBarWidget(
+              value: snapshot.data!.data.toString(),
+            ));
           } else {
             return CircularProgressIndicator();
           }
