@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
-import 'package:fyp/services/httpservice.dart';
 import 'package:fyp/widget/drawer.dart';
 import 'package:simple_circular_progress_bar/simple_circular_progress_bar.dart';
 
@@ -23,14 +22,14 @@ class _dashboardState extends State<dashboard> {
   late ValueNotifier<double> valueNotifier2;
   late ValueNotifier<double> valueNotifier3;
 
-  double a = double.parse(data.toString());
+  //double a = double.parse(data.toString());
 
   //var a=int.parse(ph);
 
   @override
   void initState() {
     super.initState();
-    valueNotifier = ValueNotifier(a);
+    // valueNotifier = ValueNotifier(a);
     valueNotifier1 = ValueNotifier(0);
     valueNotifier2 = ValueNotifier(0);
     valueNotifier3 = ValueNotifier(0);
