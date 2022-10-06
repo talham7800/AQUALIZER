@@ -1,5 +1,8 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
+import 'package:fyp/PH_data.dart';
+import 'package:fyp/services/httpservice.dart';
 import 'package:fyp/widget/drawer.dart';
 import 'package:simple_circular_progress_bar/simple_circular_progress_bar.dart';
 
@@ -17,24 +20,16 @@ class _dashboardState extends State<dashboard> {
     fontWeight: FontWeight.bold,
   );
 
-  late ValueNotifier<double> valueNotifier;
-  late ValueNotifier<double> valueNotifier1;
-  late ValueNotifier<double> valueNotifier2;
-  late ValueNotifier<double> valueNotifier3;
+  // late ValueNotifier<double> valueNotifier;
+  // late ValueNotifier<double> valueNotifier1;
+  // late ValueNotifier<double> valueNotifier2;
+  // late ValueNotifier<double> valueNotifier3;
 
   //double a = double.parse(data.toString());
 
   //var a=int.parse(ph);
 
   @override
-  void initState() {
-    super.initState();
-    // valueNotifier = ValueNotifier(a);
-    valueNotifier1 = ValueNotifier(0);
-    valueNotifier2 = ValueNotifier(0);
-    valueNotifier3 = ValueNotifier(0);
-  }
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -65,7 +60,7 @@ class _dashboardState extends State<dashboard> {
       body: SingleChildScrollView(
         child: Container(
           width: MediaQuery.of(context).size.width,
-          height: MediaQuery.of(context).size.height,
+          // height: MediaQuery.of(context).size.height,
           decoration: BoxDecoration(
               image: DecorationImage(
                   image: AssetImage("assets/123.jpg"), fit: BoxFit.fitHeight)),
@@ -114,23 +109,7 @@ class _dashboardState extends State<dashboard> {
                         Padding(
                           padding: const EdgeInsets.only(
                               left: 30.0, right: 30.0, bottom: 20.0, top: 20.0),
-                          child: SimpleCircularProgressBar(
-                            size: 100,
-                            fullProgressColor: Colors.red,
-                            valueNotifier: valueNotifier,
-                            progressStrokeWidth: 10,
-                            backStrokeWidth: 10,
-                            mergeMode: true,
-                            startAngle: 0,
-                            onGetText: (value) {
-                              return Text(
-                                '${value.toInt()}pH',
-                                style: centerTextStyle,
-                              );
-                            },
-                            progressColors: const [Colors.cyan, Colors.purple],
-                            backColor: Colors.black.withOpacity(0.4),
-                          ),
+                          child: accountDetails(),
                         ),
                       ],
                     ),
@@ -163,7 +142,7 @@ class _dashboardState extends State<dashboard> {
                               left: 30.0, right: 30.0, bottom: 20.0, top: 20.0),
                           child: SimpleCircularProgressBar(
                             size: 100,
-                            valueNotifier: valueNotifier1,
+                            // valueNotifier: valueNotifier1,
                             progressStrokeWidth: 10,
                             backStrokeWidth: 10,
                             mergeMode: true,
@@ -217,7 +196,7 @@ class _dashboardState extends State<dashboard> {
                               left: 30.0, right: 30.0, bottom: 20.0, top: 20.0),
                           child: SimpleCircularProgressBar(
                             size: 100,
-                            valueNotifier: valueNotifier2,
+                            //valueNotifier: valueNotifier2,
                             progressStrokeWidth: 10,
                             backStrokeWidth: 10,
                             mergeMode: true,
@@ -260,7 +239,7 @@ class _dashboardState extends State<dashboard> {
                               left: 30.0, right: 30.0, bottom: 20.0, top: 20.0),
                           child: SimpleCircularProgressBar(
                             size: 100,
-                            valueNotifier: valueNotifier3,
+                            //valueNotifier: valueNotifier3,
                             progressStrokeWidth: 10,
                             backStrokeWidth: 10,
                             mergeMode: true,
@@ -284,63 +263,31 @@ class _dashboardState extends State<dashboard> {
                 height: 20.0,
               ),
               Row(
-                mainAxisAlignment: MainAxisAlignment.spaceAround,
+                crossAxisAlignment: CrossAxisAlignment.end,
+                mainAxisAlignment: MainAxisAlignment.end,
                 children: [
                   GestureDetector(
                     onTap: () {
                       //var ph;
-                      //HttpServices().phLevel(ph);
+                      HttpServices().getphLevel();
+                      accountDetails();
+                      Navigator.pushReplacement(
+                          context,
+                          MaterialPageRoute(
+                              builder: (BuildContext context) => super.widget));
                     },
-                    child: Container(
-                      height: 100,
-                      width: 100,
-                      color: Colors.amberAccent,
-                    ),
-                  ),
-                  Container(
-                    height: 200,
-                    //color: Colors.amberAccent,
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(20.0),
-                      color: Colors.white,
-                      boxShadow: [
-                        BoxShadow(
-                            color: Colors.grey,
-                            offset: Offset(2, 10.0), //(x,y)
-                            blurRadius: 10.0,
-                            spreadRadius: 5),
-                      ],
-                    ),
-                    child: Column(
-                      children: [
-                        Padding(
-                          padding: const EdgeInsets.only(top: 20.0),
-                          child: Text(
-                            "Conductivity Level \nMonitor",
-                            textAlign: TextAlign.center,
-                          ),
+                    child: Padding(
+                      padding: const EdgeInsets.only(bottom: 20.0, right: 20.0),
+                      child: Container(
+                        decoration: BoxDecoration(
+                            color: Colors.blue,
+                            borderRadius: BorderRadius.circular(50.0)),
+                        height: 50,
+                        width: 50,
+                        child: Icon(
+                          Icons.refresh_outlined,
                         ),
-                        Padding(
-                          padding: const EdgeInsets.only(
-                              left: 30.0, right: 30.0, bottom: 20.0, top: 20.0),
-                          child: SimpleCircularProgressBar(
-                            size: 100,
-                            valueNotifier: valueNotifier2,
-                            progressStrokeWidth: 10,
-                            backStrokeWidth: 10,
-                            mergeMode: true,
-                            startAngle: 0,
-                            onGetText: (value) {
-                              return Text(
-                                '${value.toInt()}',
-                                style: centerTextStyle,
-                              );
-                            },
-                            progressColors: const [Colors.cyan, Colors.purple],
-                            backColor: Colors.black.withOpacity(0.4),
-                          ),
-                        ),
-                      ],
+                      ),
                     ),
                   ),
                   Container(

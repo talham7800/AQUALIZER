@@ -164,6 +164,7 @@ class CustomPassField extends StatelessWidget {
         width: 334,
         height: 54,
         child: TextField(
+          //obscureText: true,
           controller: passtextEditingController,
           //keyboardType: TextInputType.phone,
           decoration: InputDecoration(
